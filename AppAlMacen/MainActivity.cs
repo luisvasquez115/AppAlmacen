@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android;
 using Android.App;
 using Android.Content;
@@ -9,6 +10,7 @@ using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using AppAlmacen.Actividades;
 
 namespace AppAlmacen
 {
@@ -16,11 +18,23 @@ namespace AppAlmacen
 
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+        List<Android.Support.V4.App.Fragment> fragment;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+
+            fragment = new List<Android.Support.V4.App.Fragment>();
+            fragment.Add(new FragmentHome());
+            fragment.Add(new Fragment_DespachoSucursal());
+            fragment.Add(new Fragment_InventarioPaquetes());
+            fragment.Add(new Fragment_HistorialPaquetes());
+
+            SupportFragmentManager.BeginTransaction()
+                                    .Replace(Resource.Id.content_frame, fragment[0])
+                                    .Commit();
+
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
@@ -79,21 +93,30 @@ namespace AppAlmacen
 
             if (id == Resource.Id.nav_camera)
             {
-                Intent activity2 = new Intent(this, typeof(Actividades.Activity1));
+                SupportFragmentManager.BeginTransaction()
+                                        .Replace(Resource.Id.content_frame, fragment[0])
+                                        .Commit();
+                /*Intent activity2 = new Intent(this, typeof(Actividades.Activity1));
                 //activity2.PutExtra("user", ;);
-                StartActivity(activity2);
+                StartActivity(activity2);*/
             }
             else if (id == Resource.Id.nav_gallery)
             {
-
+                SupportFragmentManager.BeginTransaction()
+                                        .Replace(Resource.Id.content_frame, fragment[1])
+                                        .Commit();
             }
             else if (id == Resource.Id.nav_slideshow)
             {
-
+                SupportFragmentManager.BeginTransaction()
+                                        .Replace(Resource.Id.content_frame, fragment[2])
+                                        .Commit();
             }
             else if (id == Resource.Id.nav_manage)
             {
-
+                SupportFragmentManager.BeginTransaction()
+                                        .Replace(Resource.Id.content_frame, fragment[3])
+                                        .Commit();
             }
             else if (id == Resource.Id.nav_share)
             {

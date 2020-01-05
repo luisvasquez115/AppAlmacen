@@ -1,0 +1,81 @@
+﻿
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="392.7dp"
+        android:id="@+id/relativeLayout1">
+        <TextView
+            android:text="Codigo"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:layout_marginTop="8.7dp" />
+        <EditText
+            android:layout_width="144.7dp"
+            android:layout_height="33.3dp"
+            android:layout_below="@id/textView1"
+            android:id="@+id/editText1"
+            android:singleLine="true"
+            android:inputType="none" />
+        <Button
+            android:text="Buscar"
+            android:layout_width="wrap_content"
+            android:layout_height="38.0dp"
+            android:layout_toRightOf="@id/editText1"
+            android:id="@+id/button1"
+            android:layout_alignTop="@id/editText1" />
+        <TextView
+            android:text="Bolsa"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText1"
+            android:id="@+id/textView2"
+            android:layout_marginTop="20.0dp" />
+        <EditText
+            android:layout_width="133.3dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView2"
+            android:id="@+id/editText2"
+            android:singleLine="true"
+            android:inputType="none" />
+        <TextView
+            android:text="Sucursal"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText2"
+            android:id="@+id/textView3"
+            android:layout_marginTop="14.0dp" />
+        <EditText
+            android:layout_width="133.3dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView3"
+            android:id="@+id/editText3"
+            android:singleLine="true"
+            android:inputType="none" />
+        <TextView
+            android:text="Agencia"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText3"
+            android:id="@+id/textView4"
+            android:layout_marginTop="12.7dp" />
+        <EditText
+            android:layout_width="134.7dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView4"
+            android:id="@+id/editText4"
+            android:singleLine="true"
+            android:inputType="none" />
+    </RelativeLayout>
+
+</LinearLayout>
