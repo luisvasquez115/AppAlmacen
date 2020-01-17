@@ -69,6 +69,7 @@
     <Compile Include="Actividades\Fragment_InventarioPaquetes.cs" />
     <Compile Include="Clases.cs" />
     <Compile Include="Entidades\Bultos.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -218,6 +219,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\lo2hibeeps.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Login.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
