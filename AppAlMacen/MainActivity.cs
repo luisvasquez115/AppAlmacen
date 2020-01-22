@@ -14,7 +14,7 @@ using AppAlmacen.Actividades;
 
 namespace AppAlmacen
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
 
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
@@ -38,8 +38,8 @@ namespace AppAlmacen
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            //fab.Click += FabOnClick;
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
@@ -80,12 +80,12 @@ namespace AppAlmacen
             return base.OnOptionsItemSelected(item);
         }
 
-        private void FabOnClick(object sender, EventArgs eventArgs)
-        {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-        }
+        //private void FabOnClick(object sender, EventArgs eventArgs)
+        //{
+        //    View view = (View) sender;
+        //    Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+        //        .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+        //}
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
@@ -112,20 +112,20 @@ namespace AppAlmacen
                                         .Replace(Resource.Id.content_frame, fragment[2])
                                         .Commit();
             }
-            else if (id == Resource.Id.nav_manage)
-            {
-                SupportFragmentManager.BeginTransaction()
-                                        .Replace(Resource.Id.content_frame, fragment[3])
-                                        .Commit();
-            }
-            else if (id == Resource.Id.nav_share)
-            {
+            //else if (id == Resource.Id.nav_manage)
+            //{
+            //    SupportFragmentManager.BeginTransaction()
+            //                            .Replace(Resource.Id.content_frame, fragment[3])
+            //                            .Commit();
+            //}
+            //else if (id == Resource.Id.nav_share)
+            //{
 
-            }
-            else if (id == Resource.Id.nav_send)
-            {
+            //}
+            //else if (id == Resource.Id.nav_send)
+            //{
 
-            }
+            //}
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);

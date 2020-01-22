@@ -67,6 +67,7 @@
     <Compile Include="Actividades\Fragment_DespachoSucursal.cs" />
     <Compile Include="Actividades\Fragment_HistorialPaquetes.cs" />
     <Compile Include="Actividades\Fragment_InventarioPaquetes.cs" />
+    <Compile Include="API\ApiClient.cs" />
     <Compile Include="Clases.cs" />
     <Compile Include="Entidades\Bultos.cs" />
     <Compile Include="Login.cs" />
@@ -223,6 +224,20 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_home.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_sendingPackage.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_inventory.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\user.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

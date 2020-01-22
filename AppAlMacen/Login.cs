@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Preferences;
-using Android.Runtime;
-using Android.Views;
+﻿using Android.App;
 using Android.Widget;
+using Android.OS;
+using Android.Content;
+using Android.Preferences;
 
 namespace AppAlmacen
 {
+    [Activity(Label = "EPS", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@android:style/Theme.Material.NoActionBar")]
     public class Login : Activity
     {
         Button btnEntrar;
         EditText nombre, clave;
-        Login _login = new Login();
-        ImageView logo;
         string f;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -43,7 +35,6 @@ namespace AppAlmacen
                 btnEntrar = FindViewById<Button>(Resource.Id.button1);
                 nombre = FindViewById<EditText>(Resource.Id.editText1);
                 clave = FindViewById<EditText>(Resource.Id.editText2);
-                logo = FindViewById<ImageView>(Resource.Id.imageView1);
 
 
                 btnEntrar.Click += BtnEntrar_Click;
@@ -58,6 +49,13 @@ namespace AppAlmacen
 
         private async void BtnEntrar_Click(object sender, System.EventArgs e)
         {
+
+            Intent activity2 = new Intent(this, typeof(MainActivity));
+            activity2.PutExtra("user", "luis");
+            StartActivity(activity2);
+            Finish();
+            return;
+
             if (ValidarUsuario(nombre.Text.Trim()))
             {
                 Toast.MakeText(this, "Debe Ingresar un nombre de usuario valido.", ToastLength.Short).Show();
@@ -68,7 +66,7 @@ namespace AppAlmacen
                 Toast.MakeText(this, "Debe Ingresar una contrasena valida.", ToastLength.Short).Show();
                 return;
             }
-            f = await _login.Autenticar(nombre.Text.Trim(), clave.Text.Trim());
+            f = await API.ApiClient.Autenticar(nombre.Text.Trim(), clave.Text.Trim());
             if (f == "NotConnection")
             {
                 Toast.MakeText(this, "Sin conexion a internet." + f.ToString(), ToastLength.Long).Show();
@@ -76,8 +74,6 @@ namespace AppAlmacen
             }
             if (f.ToString() == "2")
             {
-                //Toast.MakeText(this, "Contrasena Correcta " + f.ToString(), ToastLength.Long).Show();
-
                 SaveCredentials(nombre.Text.Trim(), false);
             }
             else if (f.ToString() == "4")
@@ -113,43 +109,25 @@ namespace AppAlmacen
                 editor.PutString("nombre", userName);
                 editor.Apply();
             }
-            Intent activity2 = new Intent(this, typeof(Menu));
+            Intent activity2 = new Intent(this, typeof(MainActivity));
             activity2.PutExtra("user", userName);
             StartActivity(activity2);
             Finish();
-
-
-            Menu_Principal frag = new Menu_Principal();
-            FragmentManager manager = GetSupportFragmentManager();
-            FragmentTransaction transaction = manager.beginTransaction();
-
-            frag.setArguments(bundle);
-
-            transaction.add(R.id.fragmentContainer, frag, "Test Fragment");
-            transaction.commit();
 
         }
         public bool ValidarUsuario(string usuario)
         {
             if (usuario == string.Empty)
-            {
                 return true;
-            }
             else
-            {
                 return false;
-            }
         }
         public bool ValidarContrasena(string clave)
         {
             if (clave == string.Empty)
-            {
                 return true;
-            }
             else
-            {
                 return false;
-            }
         }
     }
 }

@@ -19,7 +19,7 @@
             android:layout_marginTop="8.7dp" />
         <EditText
             android:layout_width="144.7dp"
-            android:layout_height="33.3dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/textView1"
             android:id="@+id/editText1"
             android:singleLine="true"
@@ -70,7 +70,7 @@
             android:id="@+id/textView4"
             android:layout_marginTop="12.7dp" />
         <EditText
-            android:layout_width="134.7dp"
+            android:layout_width="133.3dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView4"
             android:id="@+id/editText4"

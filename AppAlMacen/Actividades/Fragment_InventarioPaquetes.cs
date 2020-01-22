@@ -81,6 +81,7 @@ namespace AppAlmacen.Actividades
 
         public string Chequear()
         {
+            return disponibleParaEntregar.Checked ? "S" : "N";
 
             if (disponibleParaEntregar.Checked == true)
             {
