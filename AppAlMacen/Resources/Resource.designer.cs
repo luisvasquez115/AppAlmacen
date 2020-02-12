@@ -3280,25 +3280,28 @@ namespace AppAlmacen
 			public const int notify_panel_notification_icon_bg = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int side_nav_bar = 2131165321;
+			public const int password = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int styles = 2131165322;
+			public const int side_nav_bar = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int themes = 2131165323;
+			public const int styles = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int tooltip_frame_dark = 2131165324;
+			public const int themes = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int tooltip_frame_light = 2131165325;
+			public const int tooltip_frame_dark = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int user = 2131165326;
+			public const int tooltip_frame_light = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int XMLFile1 = 2131165327;
+			public const int user = 2131165327;
+			
+			// aapt resource value: 0x7F070090
+			public const int XMLFile1 = 2131165328;
 			
 			static Drawable()
 			{
