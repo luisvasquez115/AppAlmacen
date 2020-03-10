@@ -56,7 +56,8 @@
                     android:inputType="textPersonName"
                     android:layout_marginLeft="0.0dp"
                     android:layout_centerHorizontal="true"
-                    android:paddingLeft="2dp" />
+                    android:paddingLeft="2dp"
+                    android:textColor="@android:color/background_dark" />
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="42.0dp"
@@ -69,7 +70,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_above="@id/button1"
                     android:paddingLeft="2dp"
-                    android:layout_alignParentBottom="true" />
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@android:color/background_dark" />
 
             </RelativeLayout>
         </FrameLayout>
