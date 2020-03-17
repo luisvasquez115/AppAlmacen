@@ -82,15 +82,6 @@ namespace AppAlmacen.Actividades
         public string Chequear()
         {
             return disponibleParaEntregar.Checked ? "S" : "N";
-
-            if (disponibleParaEntregar.Checked == true)
-            {
-                return "S";
-            }
-            else
-            {
-                return "N";
-            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -142,6 +133,7 @@ namespace AppAlmacen.Actividades
             if (_bultos == null)
             {
                 ReproducirAlertaError();
+                LimpiarCodigo();
                 return;
             }
             if (_bultos.BltNumero == 0)

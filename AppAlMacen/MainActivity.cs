@@ -27,9 +27,13 @@ namespace AppAlmacen
 
             fragment = new List<Android.Support.V4.App.Fragment>();
             fragment.Add(new FragmentHome());
-            fragment.Add(new Fragment_DespachoSucursal());
+            fragment.Add(new Fragment_RecepcionPaquetes());
             fragment.Add(new Fragment_InventarioPaquetes());
-            fragment.Add(new Fragment_HistorialPaquetes());
+            fragment.Add(new fragment_TransitoPaquetes());
+            fragment.Add(new fragment_ConsultaPaquetes());
+            fragment.Add(new fragment_PreparacionDespacho());
+            fragment.Add(new fragment_PreparacionConduce());
+            fragment.Add(new Fragment_DespachoSucursal());
 
             SupportFragmentManager.BeginTransaction()
                                     .Replace(Resource.Id.content_frame, fragment[0])
@@ -38,8 +42,6 @@ namespace AppAlmacen
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            //fab.Click += FabOnClick;
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
@@ -80,52 +82,58 @@ namespace AppAlmacen
             return base.OnOptionsItemSelected(item);
         }
 
-        //private void FabOnClick(object sender, EventArgs eventArgs)
-        //{
-        //    View view = (View) sender;
-        //    Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-        //        .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-        //}
-
         public bool OnNavigationItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
 
-            if (id == Resource.Id.nav_camera)
+            switch (id)
             {
-                SupportFragmentManager.BeginTransaction()
-                                        .Replace(Resource.Id.content_frame, fragment[0])
-                                        .Commit();
-                /*Intent activity2 = new Intent(this, typeof(Actividades.Activity1));
-                //activity2.PutExtra("user", ;);
-                StartActivity(activity2);*/
+                case Resource.Id.nav_camera:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[0])
+                                            .Commit();
+                    break;
+                case Resource.Id.nav_gallery:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[1])
+                                            .Commit();
+                    break;
+                case Resource.Id.nav_slideshow:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[2])
+                                            .Commit();
+                    break;
+                case Resource.Id.nav_transito:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[3])
+                                            .Commit();
+                    break;
+                case Resource.Id.nav_consulta:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[4])
+                                            .Commit();
+                    break;
+                case Resource.Id.nav_despacho:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[5])
+                                            .Commit();
+                    break;
+                case Resource.Id.nav_conduce:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[6])
+                                            .Commit();
+                    break;
+                case Resource.Id.nav_despachoSucursal:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[7])
+                                            .Commit();
+                    break;
+                default:
+                    SupportFragmentManager.BeginTransaction()
+                                            .Replace(Resource.Id.content_frame, fragment[0])
+                                            .Commit();
+                    break;
             }
-            else if (id == Resource.Id.nav_gallery)
-            {
-                SupportFragmentManager.BeginTransaction()
-                                        .Replace(Resource.Id.content_frame, fragment[1])
-                                        .Commit();
-            }
-            else if (id == Resource.Id.nav_slideshow)
-            {
-                SupportFragmentManager.BeginTransaction()
-                                        .Replace(Resource.Id.content_frame, fragment[2])
-                                        .Commit();
-            }
-            //else if (id == Resource.Id.nav_manage)
-            //{
-            //    SupportFragmentManager.BeginTransaction()
-            //                            .Replace(Resource.Id.content_frame, fragment[3])
-            //                            .Commit();
-            //}
-            //else if (id == Resource.Id.nav_share)
-            //{
-
-            //}
-            //else if (id == Resource.Id.nav_send)
-            //{
-
-            //}
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);

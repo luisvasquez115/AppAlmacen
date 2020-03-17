@@ -17,12 +17,12 @@
             android:icon="@drawable/ic_menu_inventory"
             android:title="Inventario" />
       <item
-          android:id="@+id/nav_gallery"
-          android:icon="@drawable/ic_menu_sendingPackage"
+          android:id="@+id/nav_transito"
+          android:icon="@drawable/ic_menu_transport"
           android:title="Transito" />
       <item
-          android:id="@+id/nav_slideshow"
-          android:icon="@drawable/ic_menu_inventory"
+          android:id="@+id/nav_consulta"
+          android:icon="@drawable/ic_menu_searchpackage"
           android:title="Consulta" />
       <!--<item
           android:id="@+id/nav_gallery"
@@ -41,16 +41,16 @@
     <item android:title="Delivery de Paquetes">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/nav_despacho"
+                android:icon="@drawable/ic_menu_despacho"
                 android:title="Preparación de Despacho" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/nav_conduce"
+                android:icon="@drawable/ic_menu_conduce"
                 android:title="Preparación de Conduce" />
           <item
-              android:id="@+id/nav_send"
-              android:icon="@drawable/ic_menu_send"
+              android:id="@+id/nav_despachoSucursal"
+              android:icon="@drawable/ic_menu_despachosucursales"
               android:title="Despacho a Sucursales" />
         </menu>
     </item>

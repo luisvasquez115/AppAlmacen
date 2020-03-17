@@ -64,9 +64,14 @@
   <ItemGroup>
     <Compile Include="Actividades\Activity1.cs" />
     <Compile Include="Actividades\FragmentHome.cs" />
+    <Compile Include="Actividades\fragment_ConsultaPaquetes.cs" />
     <Compile Include="Actividades\Fragment_DespachoSucursal.cs" />
     <Compile Include="Actividades\Fragment_HistorialPaquetes.cs" />
     <Compile Include="Actividades\Fragment_InventarioPaquetes.cs" />
+    <Compile Include="Actividades\fragment_PreparacionConduce.cs" />
+    <Compile Include="Actividades\fragment_PreparacionDespacho.cs" />
+    <Compile Include="Actividades\Fragment_RecepcionPaquetes.cs" />
+    <Compile Include="Actividades\fragment_TransitoPaquetes.cs" />
     <Compile Include="API\ApiClient.cs" />
     <Compile Include="Clases.cs" />
     <Compile Include="Entidades\Bultos.cs" />
@@ -135,6 +140,9 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v4">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +263,30 @@
     <AndroidResource Include="Resources\layout\fragment_transito.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_recepcionPaquetes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_preparacionConduce.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_preparacionDespacho.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_transport.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_searchPackage.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_conduce.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_despacho.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-v21\ic_menu_despachoSucursales.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
