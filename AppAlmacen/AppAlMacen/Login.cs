@@ -117,11 +117,17 @@ namespace AppAlmacen
         }
         public bool ValidarUsuario(string usuario)
         {
-            return string.IsNullOrEmpty(usuario) ? false : true;
+            if (usuario == string.Empty)
+                return true;
+            else
+                return false;
         }
         public bool ValidarContrasena(string clave)
         {
-            return string.IsNullOrEmpty(clave) ? false : true;
+            if (clave == string.Empty)
+                return true;
+            else
+                return false;
         }
     }
 }
