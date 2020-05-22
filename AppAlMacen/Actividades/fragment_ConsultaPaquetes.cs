@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace AppAlmacen.Actividades
 {
-    class fragment_ConsultaPaquetes : Android.Support.V4.App.Fragment
+    public class fragment_ConsultaPaquetes : Android.Support.V4.App.Fragment
     {
     }
 }

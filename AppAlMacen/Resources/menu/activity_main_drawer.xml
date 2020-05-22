@@ -36,10 +36,10 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Historial Paquetes" />-->
-    </group>
 
     <item android:title="Delivery de Paquetes">
         <menu>
+          <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_despacho"
                 android:icon="@drawable/ic_menu_despacho"
@@ -52,7 +52,10 @@
               android:id="@+id/nav_despachoSucursal"
               android:icon="@drawable/ic_menu_despachosucursales"
               android:title="Despacho a Sucursales" />
+          </group>
         </menu>
     </item>
+      
+    </group>
 
 </menu>

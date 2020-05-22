@@ -4,6 +4,7 @@ using Android;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Preferences;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
@@ -19,6 +20,7 @@ namespace AppAlmacen
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         List<Android.Support.V4.App.Fragment> fragment;
+        public NavigationView navigationView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -48,21 +50,31 @@ namespace AppAlmacen
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.SetNavigationItemSelectedListener(this); 
+            navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            navigationView.SetNavigationItemSelectedListener(this);
+
+            //deshabilitar opciones dentro del menu
+            //DisableItemOnMenu(0, false);
+
+            //deshabilitar opciones dentro del submenu
+            //navigationView.Menu.GetItem(5).SubMenu.GetItem(0).SetVisible(false);
+        }
+
+        public void DisableItemOnMenu(int Item, bool IsVisible)
+        {
+            if (IsVisible)
+                navigationView.Menu.GetItem(Item).SetVisible(true);
+            else
+                navigationView.Menu.GetItem(Item).SetVisible(false);
         }
 
         public override void OnBackPressed()
         {
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             if(drawer.IsDrawerOpen(GravityCompat.Start))
-            {
                 drawer.CloseDrawer(GravityCompat.Start);
-            }
             else
-            {
                 base.OnBackPressed();
-            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -76,9 +88,16 @@ namespace AppAlmacen
             int id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
+                ISharedPreferences preferences = PreferenceManager.GetDefaultSharedPreferences(this);
+                ISharedPreferencesEditor editor = preferences.Edit();
+                editor.Remove("key_login_successfully");
+                editor.Apply();
+
+                Intent login = new Intent(this, typeof(Login));
+                StartActivity(login);
+                Finish();
                 return true;
             }
-
             return base.OnOptionsItemSelected(item);
         }
 

@@ -20,7 +20,6 @@ namespace AppAlmacen.Actividades
 {
     public class Fragment_RecepcionPaquetes : Android.Support.V4.App.Fragment
     {
-
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

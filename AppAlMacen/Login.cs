@@ -27,7 +27,7 @@ namespace AppAlmacen
                 {
                     string nombreUsuario = prefs.GetString("nombre", default);
                     SaveCredentials(nombreUsuario, false);
-                    Toast.MakeText(this, "Este usuario esta logueado " + nombreUsuario, ToastLength.Short).Show();
+                    Toast.MakeText(this, "Este usuario está logueado " + nombreUsuario, ToastLength.Short).Show();
                     return;
                 }
                 // Set our view from the "main" layout resource
@@ -38,6 +38,7 @@ namespace AppAlmacen
 
 
                 btnEntrar.Click += BtnEntrar_Click;
+
 
             }
             catch (System.Exception ex)
