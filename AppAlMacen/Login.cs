@@ -6,7 +6,7 @@ using Android.Preferences;
 
 namespace AppAlmacen
 {
-    [Activity(Label = "EPS", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@android:style/Theme.Material.NoActionBar")]
+    [Activity(MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@android:style/Theme.Material.NoActionBar")]
     public class Login : Activity
     {
         Button btnEntrar;
@@ -32,14 +32,12 @@ namespace AppAlmacen
                 }
                 // Set our view from the "main" layout resource
                 SetContentView(Resource.Layout.Login);
-                btnEntrar = FindViewById<Button>(Resource.Id.button1);
-                nombre = FindViewById<EditText>(Resource.Id.editText1);
-                clave = FindViewById<EditText>(Resource.Id.editText2);
+                btnEntrar = FindViewById<Button>(Resource.Id.btnEntrar);
+                nombre = FindViewById<EditText>(Resource.Id.txtUsuario);
+                clave = FindViewById<EditText>(Resource.Id.txtContrasena);
 
 
                 btnEntrar.Click += BtnEntrar_Click;
-
-
             }
             catch (System.Exception ex)
             {

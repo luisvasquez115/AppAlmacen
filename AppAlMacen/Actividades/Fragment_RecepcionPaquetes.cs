@@ -20,6 +20,8 @@ namespace AppAlmacen.Actividades
 {
     public class Fragment_RecepcionPaquetes : Android.Support.V4.App.Fragment
     {
+        Spinner SpinnerEstado;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,8 +34,23 @@ namespace AppAlmacen.Actividades
             // Use this to return your custom view for this Fragment
             View view = inflater.Inflate(Resource.Layout.fragment_recepcionPaquetes, container, false);
 
+            SpinnerEstado = view.FindViewById<Spinner>(Resource.Id.spinnerEstado);
+
+            setSpinner();
 
             return view;
+        }
+
+        private void setSpinner()
+        {
+            List<string> mitems = new List<string>();
+            mitems.Add("Seleccionar un Estado");
+            mitems.Add("Estado 2");
+            mitems.Add("Estado 3");
+            mitems.Add("Estado 4");
+            ArrayAdapter adapter = new ArrayAdapter(this.Context, Android.Resource.Layout.SimpleSpinnerDropDownItem, mitems);
+            SpinnerEstado.Adapter = adapter;
+
         }
     }
 }

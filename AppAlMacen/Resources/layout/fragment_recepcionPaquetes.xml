@@ -5,40 +5,65 @@
     android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/relativeLayout1">
-    <TextView
-        android:text="Estado:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="37.0dp"
-        android:id="@+id/textView1"
-        android:layout_marginTop="8.0dp"  />
-    <TextView
-        android:text="Código:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="40.0dp"
-        android:layout_below="@id/textView1"
-        android:id="@+id/textView2" />
-    <EditText
-        android:layout_width="274.5dp"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/textView2"
-        android:id="@+id/editText2"/>
+    android:orientation="vertical"
+    android:id="@+id/relativeLayout1">  
 
-    <EditText
+    <LinearLayout
+        android:id="@+id/LinearLayot1"
+        android:layout_below="@id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/textView1"
-        android:id="@+id/editText1"
-        android:layout_below="@id/textView1"/>
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:text="Estado"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:singleLine="true"
+            android:inputType="text" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/spinnerEstado"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:text="Código"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LinearLayot1"
+            android:id="@+id/textView2" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textView1"
+            android:id="@+id/editText1"
+            android:layout_below="@id/textView1"
+            android:singleLine="true"
+            android:inputType="text" />
+
+    </LinearLayout>
+
     <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15.0dp" 
-        android:layout_below="@id/editText1"
         android:id="@+id/button1"
-        android:layout_alignBottom="@id/textView2"/>
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Buscar"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/azulEps" 
+        android:layout_marginBottom="-6dp"
+        android:layout_marginLeft="-6dp"
+        android:layout_marginRight="-6dp"/>
 
 </RelativeLayout>

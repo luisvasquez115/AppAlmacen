@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Android;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -15,7 +14,7 @@ using AppAlmacen.Actividades;
 
 namespace AppAlmacen
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar")]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {

@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">EPS Almacen</string>
+    <string name="app_name">EPS Almacén</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Cerar Sesión</string>
+    <string name="action_settings">Cerrar Sesión</string>
+
+
+
+
+  <string name="ubicacion">Ubicación</string>
+  <string name="codigo">Código</string>
+  <string name="codigoBarra">Código de Barra</string>
 </resources>

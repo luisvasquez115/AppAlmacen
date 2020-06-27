@@ -1,14 +1,280 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+﻿
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Home Page" />
+    <GridLayout
+        android:columnCount="2"
+        android:rowCount="4"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:padding="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    <!--card row 1--> 
+    <!--card column 1 and row 1--> 
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp">
+    
+        <LinearLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-</RelativeLayout>
+            <ImageView
+                android:src="@drawable/ic_menu_sendingPackage"
+                android:tint="@color/azulEps"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"/>
+
+                <TextView
+                    android:text="Recepcion"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content" />
+
+        </LinearLayout>        
+    </android.support.design.card.MaterialCardView>
+        
+    <!--card column 2 and row 1--> 
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp">
+    
+        <LinearLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_menu_inventory"
+                android:tint="@color/azulEps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:text="Inventario" />
+
+        </LinearLayout>        
+    </android.support.design.card.MaterialCardView>
+        
+        
+    <!--card row 2--> 
+    <!--card column 1 and row 2--> 
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp">
+    
+        <LinearLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_menu_transport"
+                android:tint="@color/azulEps"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:text="Transito" />
+
+        </LinearLayout>        
+    </android.support.design.card.MaterialCardView>
+        
+    <!--card column 2 and row 2--> 
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp">
+    
+        <LinearLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_menu_searchpackage"
+                android:tint="@color/azulEps"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Consulta"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content" />
+
+        </LinearLayout>        
+    </android.support.design.card.MaterialCardView>
+        
+
+    <!--card row 3--> 
+    <!--card column 1 and row 3--> 
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp">
+    
+        <LinearLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_menu_despacho"
+                android:tint="@color/azulEps"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:text="Despacho" />
+
+        </LinearLayout>        
+    </android.support.design.card.MaterialCardView>
+        
+    <!--card column 2and row 3--> 
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp">
+    
+        <LinearLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_menu_conduce"
+                android:tint="@color/azulEps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:text="Conduce" />
+
+        </LinearLayout>        
+    </android.support.design.card.MaterialCardView>
+
+        
+    <!--card row 4--> 
+    <!--card column 1 and row 4--> 
+    <android.support.design.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp">
+    
+        <LinearLayout
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_menu_despachosucursales"
+                android:tint="@color/azulEps"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:text="Sucursales" />
+
+        </LinearLayout>        
+    </android.support.design.card.MaterialCardView>
+        
+
+    </GridLayout>
+
+</LinearLayout>

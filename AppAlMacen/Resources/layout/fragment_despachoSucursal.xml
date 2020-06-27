@@ -1,81 +1,91 @@
 ﻿
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/LinearDespachoSucursal"
         android:layout_width="match_parent"
-        android:layout_height="392.7dp"
-        android:id="@+id/relativeLayout1">
-        <TextView
-            android:text="Codigo"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView1"
-            android:layout_marginTop="8.7dp" />
-        <EditText
-            android:layout_width="144.7dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView1"
-            android:id="@+id/editText1"
-            android:singleLine="true"
-            android:inputType="none" />
-        <Button
-            android:text="Buscar"
-            android:layout_width="wrap_content"
-            android:layout_height="38.0dp"
-            android:layout_toRightOf="@id/editText1"
-            android:id="@+id/button1"
-            android:layout_alignTop="@id/editText1" />
-        <TextView
-            android:text="Bolsa"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editText1"
-            android:id="@+id/textView2"
-            android:layout_marginTop="20.0dp" />
-        <EditText
-            android:layout_width="133.3dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView2"
-            android:id="@+id/editText2"
-            android:singleLine="true"
-            android:inputType="none" />
-        <TextView
-            android:text="Sucursal"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editText2"
-            android:id="@+id/textView3"
-            android:layout_marginTop="14.0dp" />
-        <EditText
-            android:layout_width="133.3dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView3"
-            android:id="@+id/editText3"
-            android:singleLine="true"
-            android:inputType="none" />
-        <TextView
-            android:text="Agencia"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editText3"
-            android:id="@+id/textView4"
-            android:layout_marginTop="12.7dp" />
-        <EditText
-            android:layout_width="133.3dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textView4"
-            android:id="@+id/editText4"
-            android:singleLine="true"
-            android:inputType="none" />
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true">
 
-</LinearLayout>
+    <TextView
+        android:text="Código"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblCodigo" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCodigo"
+        android:singleLine="true"
+        android:inputType="none" />
+
+    <TextView
+        android:text="Bolsa"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCodigo"
+        android:id="@+id/lblBolsa" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCodigo"
+        android:id="@+id/txtBolsa"
+        android:singleLine="true"
+        android:inputType="none"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:text="Sucursal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtCodigo"
+        android:id="@+id/lblSucursal"
+        android:layout_above="@id/txtSucursal" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtAgencia"
+        android:id="@+id/txtSucursal"
+        android:singleLine="true"
+        android:inputType="none"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:text="Agencia"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtSucursal"
+        android:id="@+id/lblAgencia" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblAgencia"
+        android:id="@+id/txtAgencia"
+        android:singleLine="true"
+        android:inputType="none" />
+    </LinearLayout>
+
+    <Button
+        android:text="Enviar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/btnBuscar"
+        android:layout_marginBottom="-6dp"
+        android:layout_marginLeft="-6dp"
+        android:layout_marginRight="-6dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

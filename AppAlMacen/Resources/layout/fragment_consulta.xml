@@ -15,7 +15,7 @@
         <EditText
             android:inputType="textPersonName"
             android:id="@+id/editText1"
-            android:hint="Codigo de Barra"
+            android:hint="@string/codigoBarra"
             android:textColor="@android:color/black"
             android:layout_width="198.7dp"
             android:layout_height="35.3dp"
