@@ -17,7 +17,8 @@
         
     <!--card row 1--> 
     <!--card column 1 and row 1--> 
-    <android.support.design.card.MaterialCardView
+    <android.support.v7.widget.CardView
+        android:id="@+id/menu_recepcion"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
@@ -25,12 +26,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
         android:elevation="8dp">
     
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -42,7 +45,7 @@
                 android:layout_height="60dp"/>
 
                 <TextView
-                    android:text="Recepcion"
+                    android:text="@string/recepcion"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:layout_width="wrap_content"
@@ -50,10 +53,11 @@
                     android:layout_height="wrap_content" />
 
         </LinearLayout>        
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
         
-    <!--card column 2 and row 1--> 
-    <android.support.design.card.MaterialCardView
+    <!--card column 2 and row 1-->         
+    <android.support.v7.widget.CardView
+        android:id="@+id/menu_inventario"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
@@ -61,12 +65,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
         android:elevation="8dp">
     
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -86,12 +92,13 @@
                     android:text="Inventario" />
 
         </LinearLayout>        
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
         
         
     <!--card row 2--> 
     <!--card column 1 and row 2--> 
-    <android.support.design.card.MaterialCardView
+    <android.support.v7.widget.CardView
+        android:id="@+id/menu_transito"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
@@ -99,12 +106,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
         android:elevation="8dp">
     
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -121,13 +130,14 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textSize="18sp"
-                    android:text="Transito" />
+                    android:text="@string/transito" />
 
         </LinearLayout>        
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
         
     <!--card column 2 and row 2--> 
-    <android.support.design.card.MaterialCardView
+    <android.support.v7.widget.CardView
+        android:id="@+id/menu_consulta"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
@@ -135,12 +145,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
         android:elevation="8dp">
     
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -160,12 +172,13 @@
                     android:layout_height="wrap_content" />
 
         </LinearLayout>        
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
         
 
     <!--card row 3--> 
     <!--card column 1 and row 3--> 
-    <android.support.design.card.MaterialCardView
+    <android.support.v7.widget.CardView
+        android:id="@+id/menu_despacho"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
@@ -173,12 +186,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
         android:elevation="8dp">
     
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -198,10 +213,11 @@
                     android:text="Despacho" />
 
         </LinearLayout>        
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
         
     <!--card column 2and row 3--> 
-    <android.support.design.card.MaterialCardView
+    <android.support.v7.widget.CardView
+        android:id="@+id/menu_conduce"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
@@ -209,12 +225,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
         android:elevation="8dp">
     
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -234,12 +252,13 @@
                     android:text="Conduce" />
 
         </LinearLayout>        
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
 
         
     <!--card row 4--> 
     <!--card column 1 and row 4--> 
-    <android.support.design.card.MaterialCardView
+    <android.support.v7.widget.CardView
+        android:id="@+id/menu_sucursales"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_columnWeight="1"
@@ -247,12 +266,14 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
         android:elevation="8dp">
     
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_margin="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -272,7 +293,7 @@
                     android:text="Sucursales" />
 
         </LinearLayout>        
-    </android.support.design.card.MaterialCardView>
+    </android.support.v7.widget.CardView>
         
 
     </GridLayout>

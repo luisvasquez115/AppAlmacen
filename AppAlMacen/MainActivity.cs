@@ -18,8 +18,8 @@ namespace AppAlmacen
 
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-        List<Android.Support.V4.App.Fragment> fragment;
-        public NavigationView navigationView;
+        public static List<Android.Support.V4.App.Fragment> fragment;
+        public static NavigationView navigationView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -102,6 +102,10 @@ namespace AppAlmacen
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
+            int sizeSub = navigationView.Menu.GetItem(5).SubMenu.Size();
+            for (int i = 0; i < sizeSub; i++)
+                navigationView.Menu.GetItem(5).SubMenu.GetItem(i).SetChecked(false);
+
             int id = item.ItemId;
 
             switch (id)
@@ -154,7 +158,7 @@ namespace AppAlmacen
             }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            drawer.CloseDrawer(GravityCompat.Start);
+            drawer.CloseDrawer(GravityCompat.Start, true);
             return true;
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

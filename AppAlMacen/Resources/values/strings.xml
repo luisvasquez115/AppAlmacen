@@ -10,4 +10,7 @@
   <string name="ubicacion">Ubicación</string>
   <string name="codigo">Código</string>
   <string name="codigoBarra">Código de Barra</string>
+
+  <string name="transito">Tránsito</string>
+  <string name="recepcion">Recepción</string>
 </resources>
