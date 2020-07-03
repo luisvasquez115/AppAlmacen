@@ -2,19 +2,6 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-
-
-using System;
-using System.Collections.Generic;
-using Android;
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Support.Design.Widget;
-using Android.Support.V4.View;
-using Android.Support.V4.Widget;
-using Android.Support.V7.App;
-using AppAlmacen.Actividades;
 using Android.Media;
 
 namespace AppAlmacen.Actividades
@@ -23,8 +10,7 @@ namespace AppAlmacen.Actividades
     {
         EditText txtCodigo, txtBolsa, txtSucursal, txtAgencia;
         Button btnBuscar;
-        Ringtone RingToneGood = null;
-        Ringtone RingToneError = null;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -40,9 +26,6 @@ namespace AppAlmacen.Actividades
             txtSucursal = view.FindViewById<EditText>(Resource.Id.txtSucursal);
             txtAgencia = view.FindViewById<EditText>(Resource.Id.txtAgencia);
             btnBuscar = view.FindViewById<Button>(Resource.Id.btnBuscar);
-
-            RingToneGood = RingtoneManager.GetRingtone(this.Context, Android.Net.Uri.Parse(@"android.resource://" + this.Context.PackageName + "/" + Resource.Raw.goodreads));
-            RingToneError = RingtoneManager.GetRingtone(this.Context, Android.Net.Uri.Parse(@"android.resource://" + this.Context.PackageName + "/" + Resource.Raw.Alarm2));
 
 
             return view;

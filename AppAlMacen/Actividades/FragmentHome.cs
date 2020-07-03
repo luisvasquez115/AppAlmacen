@@ -18,7 +18,6 @@ namespace AppAlmacen.Actividades
     public class FragmentHome : Android.Support.V4.App.Fragment
     {
         CardView menu_recepcion, menu_inventario, menu_transito, menu_consulta, menu_despacho, menu_conduce, menu_sucursales;
-        MainActivity mainActivity = new MainActivity();
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,12 +41,12 @@ namespace AppAlmacen.Actividades
 
 
             var kl = MainActivity.navigationView.Menu.GetItem(2);
-            menu_recepcion.Click += delegate { ReplaceFragment(MainActivity.fragment[1], itemMenu: 1); };
+            menu_recepcion.Click  += delegate { ReplaceFragment(MainActivity.fragment[1], itemMenu: 1); };
             menu_inventario.Click += delegate { ReplaceFragment(MainActivity.fragment[2], itemMenu: 2); };
-            menu_transito.Click += delegate { ReplaceFragment(MainActivity.fragment[3], itemMenu: 3); };
-            menu_consulta.Click += delegate { ReplaceFragment(MainActivity.fragment[4], itemMenu: 4); };
-            menu_despacho.Click += delegate { ReplaceFragment(MainActivity.fragment[5], itemSubMenu: 0); };
-            menu_conduce.Click += delegate { ReplaceFragment(MainActivity.fragment[6], itemSubMenu: 1); };
+            menu_transito.Click   += delegate { ReplaceFragment(MainActivity.fragment[3], itemMenu: 3); };
+            menu_consulta.Click   += delegate { ReplaceFragment(MainActivity.fragment[4], itemMenu: 4); };
+            menu_despacho.Click   += delegate { ReplaceFragment(MainActivity.fragment[5], itemSubMenu: 0); };
+            menu_conduce.Click    += delegate { ReplaceFragment(MainActivity.fragment[6], itemSubMenu: 1); };
             menu_sucursales.Click += delegate { ReplaceFragment(MainActivity.fragment[7], itemSubMenu: 2); };
 
             return view;

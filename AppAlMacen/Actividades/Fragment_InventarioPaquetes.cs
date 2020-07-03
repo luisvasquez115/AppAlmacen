@@ -13,7 +13,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using AppAlmacen.Clases;
-using AppAlmacen.Wrappers;
+using AppAlmacen.Dal;
 
 namespace AppAlmacen.Actividades
 {
@@ -22,11 +22,11 @@ namespace AppAlmacen.Actividades
         EditText txtUbicacion, txtCodigo;
         Button btnBuscar;
         CheckBox disponibleParaEntregar;
-        string usuario, ip;
+        string usuario;
         Ringtone RingTono2 = null;
         Ringtone RingTono3 = null;
         String sessionId;
-        Bultos _bultosWS = new Bultos();
+        BultosDAL _bultosWS = new BultosDAL();
         BultosApp _bultos;
         AlertDialog _noDisponibleAlertDialog;
 
@@ -51,10 +51,6 @@ namespace AppAlmacen.Actividades
             RingTono2 = RingtoneManager.GetRingtone(this.Context, Android.Net.Uri.Parse(@"android.resource://" + this.Context.PackageName + "/" + Resource.Raw.goodreads));
             RingTono3 = RingtoneManager.GetRingtone(this.Context, Android.Net.Uri.Parse(@"android.resource://" + this.Context.PackageName + "/" + Resource.Raw.Alarm2));
 
-            foreach (IPAddress adress in Dns.GetHostAddresses(Dns.GetHostName()))
-            {
-                ip = adress.ToString();
-            }
 
             btnBuscar.Click += BtnBuscar_Click;
             txtCodigo.KeyPress += TxtCodigo_KeyPress;
@@ -68,7 +64,7 @@ namespace AppAlmacen.Actividades
                 if (e.KeyCode == Keycode.Enter && e.Event.Action == KeyEventActions.Up)
                 {
                     if (!string.IsNullOrEmpty(txtCodigo.Text) && !string.IsNullOrEmpty(txtUbicacion.Text.Trim()))
-                        actualizar();
+                        ActualizarAsync();
                     else
                         ReproducirAlertaError();
                 }
@@ -89,7 +85,7 @@ namespace AppAlmacen.Actividades
             try
             {
                 if (!string.IsNullOrEmpty(txtCodigo.Text) && !string.IsNullOrEmpty(txtUbicacion.Text.Trim()))
-                    actualizar();
+                    ActualizarAsync();
                 else
                     ReproducirAlertaError();
             }
@@ -125,10 +121,23 @@ namespace AppAlmacen.Actividades
             }
         }
 
-        public void actualizar()
+        public async System.Threading.Tasks.Task ActualizarAsync()
         {
             _bultos = _bultosWS.ActualizarInventarioPaquetes("", usuario, "001", txtCodigo.Text.Trim(),
-                txtUbicacion.Text.Trim(), Chequear(), "1", ip);
+                txtUbicacion.Text.Trim(), Chequear(), "1", MainActivity.GetIp());
+
+            /*_bultos = await API.ApiClient.GetData<BultosApp>("/app/actualizar_inventario_paquetes",
+                new
+                {
+                    Ret_Mensaje = "",
+                    RES_CODIGO = usuario,
+                    SUC_CODIGO = "001",
+                    BLT_CODIGO_BARRA = txtCodigo.Text.Trim(),
+                    BLT_UBICACION = txtUbicacion.Text.Trim(),
+                    BLT_ENTREGAR = Chequear(),
+                    LOG_SESSION_ID = "1",
+                    LOG_DIRECCION_IP = ip
+                });*/
 
             if (_bultos == null)
             {

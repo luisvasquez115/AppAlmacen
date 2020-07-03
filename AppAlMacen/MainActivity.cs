@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Media;
 using Android.OS;
 using Android.Preferences;
 using Android.Runtime;
@@ -20,6 +21,10 @@ namespace AppAlmacen
     {
         public static List<Android.Support.V4.App.Fragment> fragment;
         public static NavigationView navigationView;
+        public static Ringtone RingToneGood = null;
+        public static Ringtone RingToneError = null;
+        public static Ringtone RingToneError5 = null;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -52,6 +57,8 @@ namespace AppAlmacen
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
+            StartVarGeneric();
+
             //deshabilitar opciones dentro del menu
             //DisableItemOnMenu(0, false);
 
@@ -59,7 +66,7 @@ namespace AppAlmacen
             //navigationView.Menu.GetItem(5).SubMenu.GetItem(0).SetVisible(false);
         }
 
-        public void DisableItemOnMenu(int Item, bool IsVisible)
+        public void DisableEnabledItemOnMenu(int Item, bool IsVisible)
         {
             if (IsVisible)
                 navigationView.Menu.GetItem(Item).SetVisible(true);
@@ -73,7 +80,13 @@ namespace AppAlmacen
             if(drawer.IsDrawerOpen(GravityCompat.Start))
                 drawer.CloseDrawer(GravityCompat.Start);
             else
-                base.OnBackPressed();
+            {
+                SupportFragmentManager.BeginTransaction()
+                                        .Replace(Resource.Id.content_frame, fragment[0])
+                                        .Commit();
+                LimpiarSelectedOptionMenu(IsBack: true);
+            }
+                //base.OnBackPressed();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -102,9 +115,7 @@ namespace AppAlmacen
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
-            int sizeSub = navigationView.Menu.GetItem(5).SubMenu.Size();
-            for (int i = 0; i < sizeSub; i++)
-                navigationView.Menu.GetItem(5).SubMenu.GetItem(i).SetChecked(false);
+            LimpiarSelectedOptionMenu();
 
             int id = item.ItemId;
 
@@ -158,8 +169,24 @@ namespace AppAlmacen
             }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            drawer.CloseDrawer(GravityCompat.Start, true);
+            drawer.CloseDrawer(GravityCompat.Start);
             return true;
+        }
+
+        public void LimpiarSelectedOptionMenu(bool IsBack = false)
+        {
+            if (IsBack)
+            {
+                int sizeMenu = navigationView.Menu.Size();
+                for (int i = 0; i < sizeMenu; i++)
+                    navigationView.Menu.GetItem(i).SetChecked(false);
+
+                //select Home
+                DisableEnabledItemOnMenu(1, true);
+            }
+            int sizeSub = navigationView.Menu.GetItem(5).SubMenu.Size();
+            for (int i = 0; i < sizeSub; i++)
+                navigationView.Menu.GetItem(5).SubMenu.GetItem(i).SetChecked(false);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -167,6 +194,53 @@ namespace AppAlmacen
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+
+        #region Genericos
+                     
+        public void StartVarGeneric()
+        {
+            RingToneGood = RingtoneManager.GetRingtone(this.ApplicationContext, Android.Net.Uri.Parse(@"android.resource://" + this.ApplicationContext.PackageName + "/" + Resource.Raw.goodreads));
+            RingToneError = RingtoneManager.GetRingtone(this.ApplicationContext, Android.Net.Uri.Parse(@"android.resource://" + this.ApplicationContext.PackageName + "/" + Resource.Raw.Alarm2));
+            RingToneError5 = RingtoneManager.GetRingtone(this.ApplicationContext, Android.Net.Uri.Parse(@"android.resource://" + this.ApplicationContext.PackageName + "/" + Resource.Raw.Alarm5));
+        }
+
+        public static string GetIp()
+        {
+            foreach (System.Net.IPAddress adress in System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName()))
+            {
+                return adress.ToString();
+            }
+            return "";
+        }
+
+        public static void ReproducirAlerta()
+        {
+            if (RingToneGood.IsPlaying)
+            {
+                RingToneGood.Stop();
+                RingToneGood.Play();
+            }
+            else
+            {
+                RingToneGood.Play();
+            }
+        }
+
+        public static void ReproducirAlertaError()
+        {
+            if (RingToneError.IsPlaying)
+            {
+                RingToneError.Stop();
+                RingToneError.Play();
+            }
+            else
+            {
+                RingToneError.Play();
+            }
+        }
+
+        #endregion
     }
 }
 

@@ -17,9 +17,9 @@ using System.Json;
 using System.Threading.Tasks;
 using System.Net.Http;
 
-namespace AppAlmacen.Wrappers
+namespace AppAlmacen.Dal
 {
-    public class Bultos
+    public class BultosDAL
     {
         ICollection<BultosApp> _bultosApp;
         BultosApp _bultosApp2;
@@ -121,6 +121,7 @@ namespace AppAlmacen.Wrappers
                 return 9;
             }
         }
+
         public bool CheckInternetConnection()
         {
             string CheckUrl = "http://192.168.199.228:3333/api/Values";

@@ -13,4 +13,6 @@
 
   <string name="transito">Tránsito</string>
   <string name="recepcion">Recepción</string>
+
+  <string name="contrasena">Contraseña</string>
 </resources>

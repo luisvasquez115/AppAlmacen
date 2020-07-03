@@ -80,7 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtContrasena"
-                    android:hint="Contraseña"
+                    android:hint="@string/contrasena"
                     android:textAlignment="textStart"
                     android:inputType="textPassword"
                     android:layout_marginLeft="0.0dp"

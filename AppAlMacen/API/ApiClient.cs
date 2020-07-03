@@ -17,12 +17,53 @@ namespace AppAlmacen.API
 {
     public class ApiClient
     {
+        static string URL_API = "http://192.168.199.228:3333";
+
+        public static async Task<T> GetData<T>(string action,  object param)
+        {
+            try
+            {
+                var jsonRequest = param == null ? "{}" : Newtonsoft.Json.JsonConvert.SerializeObject(param);
+
+                using (var client = new System.Net.Http.HttpClient())
+                {
+                    client.BaseAddress = new Uri(URL_API);
+                    client.Timeout = new TimeSpan(0, 0, 30);
+
+                    var content = new System.Net.Http.StringContent(jsonRequest, Encoding.UTF8, "application/json");
+
+                    var responseTask = await client.PostAsync(action, content);
+
+                    if (responseTask.IsSuccessStatusCode)
+                    {
+                        var tp = await responseTask.Content.ReadAsStringAsync();
+
+                        var serializerSettings = new Newtonsoft.Json.JsonSerializerSettings
+                        {
+                            DateFormatHandling = Newtonsoft.Json.DateFormatHandling.MicrosoftDateFormat,
+                            DateTimeZoneHandling = Newtonsoft.Json.DateTimeZoneHandling.Local
+                        };
+
+                        return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(tp, serializerSettings);
+                    }
+                    else
+                    {
+                        return default(T);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return default(T);
+            }
+        }
+
         public static async Task<string> Autenticar(string nombre, string clave)
         {
             if (CheckInternetConnection() == false)
                 return "NotConnection";
             string login;
-            var restPay = "http://192.168.199.228:3333//api/prueba/nombre/clave?nombre=" + nombre + "&clave=" + clave + "";
+            var restPay = $"{URL_API}//api/prueba/nombre/clave?nombre=" + nombre + "&clave=" + clave + "";
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(restPay));
             request.ContentType = "application/json";
             request.Method = "GET";
@@ -43,7 +84,7 @@ namespace AppAlmacen.API
 
         public static bool CheckInternetConnection()
         {
-            string CheckUrl = "http://192.168.199.228:3333/api/Values" +
+            string CheckUrl = $"{URL_API}/api/Values" +
                 "";
             try
             {
